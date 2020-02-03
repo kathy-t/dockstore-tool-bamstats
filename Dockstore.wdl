@@ -29,5 +29,5 @@ workflow bamstatsWorkflow {
         File bam_input
         Int mem_gb
     }
-	call bamstats { input: bam_input=bam_input, mem_gb=mem_gb }
+	
 }
