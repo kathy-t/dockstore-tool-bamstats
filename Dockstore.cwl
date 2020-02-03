@@ -1,6 +1,6 @@
 #!/usr/bin/env cwl-runner
   
-class: CommandLineTool
+class: Workflow
 id: "BAMStats"
 label: "BAMStats tool"
 cwlVersion: v1.1
