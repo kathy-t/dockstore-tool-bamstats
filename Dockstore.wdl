@@ -24,10 +24,28 @@ task bamstats {
 	}
 }
 
+task hello {
+  input {
+    String name
+  }
+
+  command {
+    echo 'hello ${name}!'
+  }
+  output {
+    File response = stdout()
+  }
+  runtime {
+   docker: 'ubuntu:latest'
+  }
+} 
+
 workflow bamstatsWorkflow {
     input {
         File bam_input
         Int mem_gb
     }
+    call bamstats { input: bam_input=bam_input, mem_gb=mem_gb }
+    call hello
 	
 }
